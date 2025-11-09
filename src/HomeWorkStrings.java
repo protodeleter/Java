@@ -1,3 +1,7 @@
+/**
+ * Pavel Nasonov
+ */
+
 import java.util.Scanner;
 
 public class HomeWorkStrings {
@@ -21,7 +25,8 @@ public class HomeWorkStrings {
 //        exeEight();
 //        exeNine();
 //        exeTen();
-        exeEleven();
+//        exeEleven();
+        exeTwelve();
     }
 
 
@@ -240,9 +245,9 @@ public class HomeWorkStrings {
         String secondWord = "";
         int len = inps.length();
         firstWord = inps.substring(0, spaceChar);
-        secondWord = inps.substring(spaceChar+1, len);
-        System.out.println(firstWord.substring(0,1).toUpperCase() + firstWord.substring(1,firstWord.length()));
-        System.out.println(secondWord.substring(0,1).toUpperCase() + secondWord.substring(1,secondWord.length()));
+        secondWord = inps.substring(spaceChar + 1, len);
+        System.out.println(firstWord.substring(0, 1).toUpperCase() + firstWord.substring(1, firstWord.length()));
+        System.out.println(secondWord.substring(0, 1).toUpperCase() + secondWord.substring(1, secondWord.length()));
     }
 
     /**
@@ -261,31 +266,49 @@ public class HomeWorkStrings {
 // ABCFH BCDYBC KFBCTY BCF
 // BC
 // KK
-        System.out.println( mainstr.replaceAll(subStr, secondSub));
+        System.out.println(mainstr.replaceAll(subStr, secondSub));
     }
 
+
+    /**
+     * Gets string from input and adds k every two charachters
+     */
     static void exeEleven() {
 
         System.out.println("Enter main String: ");
         String stttr = inp.nextLine();
         String kk = "K";
-
         String newStr = "";
 
         int len = stttr.length();
 
-        for (int i = 0; i <= len-1 ||  i <= newStr.length() -1; i++) {
-
-
-
-            if( i != 0 && i%2==0) {
-                newStr+= kk;
+        for (int i = 0; i < len; i++) {
+            if (i != 0 && i % 2 == 0) {
+                newStr += kk;
             }
+            newStr += stttr.substring(i, i + 1);
+        }
+        System.out.println(newStr);
+        //ABCDEFGHI
 
-            newStr += stttr.substring(i, i+1);
+    }
+
+    static void exeTwelve() {
+
+        System.out.println("Enter main String: ");
+        String stttr = inp.nextLine();
+
+        String newst = "";
+
+        for (int i = 0; i < stttr.length(); i++) {
+            if (stttr.charAt(i) >= 48 && stttr.charAt(i) <= 57) {
+                for (int j = 0; j < stttr.charAt(i) - '0'; j++) {
+                    newst += stttr.charAt(i + 1);
+                }
+            }
         }
 
-        System.out.println(newStr);
-
+        System.out.println(newst);
+//        3A2B5F
     }
 }
