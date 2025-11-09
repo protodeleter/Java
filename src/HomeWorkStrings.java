@@ -12,16 +12,16 @@ public class HomeWorkStrings {
 
 
 //        exOne();
-//        extwo();
-//        exthree();
-//        exfour();
-//        exfive();
-//        exsix();
-//        exseven();
-//        exeight();
-
-        exenine();
-
+//        exeTwo();
+//        exeThree();
+//        exeFour();
+//        exeFive();
+//        exeSix();
+//        exeSeven();
+//        exeEight();
+//        exeNine();
+//        exeTen();
+        exeEleven();
     }
 
 
@@ -64,7 +64,7 @@ public class HomeWorkStrings {
      * Gets inp of a string with two words separated with space " "
      * Prints out length of word before space and after space
      */
-    static void extwo() {
+    static void exeTwo() {
 
         System.out.print("Enter two words with a space between : ");
         String inpstr = inp.nextLine();
@@ -83,7 +83,7 @@ public class HomeWorkStrings {
      * Gets inp of 50 strings
      * Prints out how mony strings had char H in it
      */
-    static void exthree() {
+    static void exeThree() {
 
 
         int hcc = 0;
@@ -106,7 +106,7 @@ public class HomeWorkStrings {
      * Gets inp of string
      * Prints out same sting in opposite order
      */
-    static void exfour() {
+    static void exeFour() {
 
         System.out.print("Enter any string: ");
         String inps = inp.nextLine();
@@ -124,7 +124,7 @@ public class HomeWorkStrings {
      * Gets inp of 20 strings with space bvetween
      * Prints out how mony strings had char F after space Char
      */
-    static void exfive() {
+    static void exeFive() {
 
         int hcc = 0, spaceChar = 0;
 
@@ -146,7 +146,7 @@ public class HomeWorkStrings {
      * gets 2 integers
      * replaces last and first chars according to integers value
      */
-    static void exsix() {
+    static void exeSix() {
         System.out.print("Enter a string: ");
         String inps = inp.nextLine();
 
@@ -176,7 +176,7 @@ public class HomeWorkStrings {
     /**
      *
      */
-    static void exseven() {
+    static void exeSeven() {
         System.out.print("Enter a string: ");
         String inps = inp.nextLine();
 
@@ -205,7 +205,7 @@ public class HomeWorkStrings {
      * Get input string circle replacing string chars
      * get int input for number of iterations
      */
-    static void exeight() {
+    static void exeEight() {
 
         System.out.println("Enter String: ");
         String inps = inp.nextLine();
@@ -231,12 +231,61 @@ public class HomeWorkStrings {
      * get string input with multiple words
      * conver every word to capital letter
      */
-    static void exenine() {
+    static void exeNine() {
 
         System.out.println("Enter String: ");
         String inps = inp.nextLine();
-
-
+        int spaceChar = inps.indexOf(" ");
+        String firstWord = "";
+        String secondWord = "";
+        int len = inps.length();
+        firstWord = inps.substring(0, spaceChar);
+        secondWord = inps.substring(spaceChar+1, len);
+        System.out.println(firstWord.substring(0,1).toUpperCase() + firstWord.substring(1,firstWord.length()));
+        System.out.println(secondWord.substring(0,1).toUpperCase() + secondWord.substring(1,secondWord.length()));
     }
 
+    /**
+     * Get input of 3 strings
+     * replaces 2nd string with 3rd string in first string
+     */
+    static void exeTen() {
+
+        System.out.println("Enter main String: ");
+        String mainstr = inp.nextLine();
+        System.out.println("Enter First substring ");
+        String subStr = inp.nextLine();
+        System.out.println("Enter second substring: ");
+        String secondSub = inp.nextLine();
+
+// ABCFH BCDYBC KFBCTY BCF
+// BC
+// KK
+        System.out.println( mainstr.replaceAll(subStr, secondSub));
+    }
+
+    static void exeEleven() {
+
+        System.out.println("Enter main String: ");
+        String stttr = inp.nextLine();
+        String kk = "K";
+
+        String newStr = "";
+
+        int len = stttr.length();
+
+        for (int i = 0; i <= len-1 ||  i <= newStr.length() -1; i++) {
+
+
+
+            if( i != 0 && i%2==0) {
+                newStr+= kk;
+            }
+
+            newStr += stttr.substring(i, i+1);
+        }
+
+        System.out.println(newStr);
+
+    }
 }
